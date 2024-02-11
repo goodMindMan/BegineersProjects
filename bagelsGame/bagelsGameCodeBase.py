@@ -12,34 +12,61 @@ def bagelsGame( IN01 str, IN01 str, IN03 str):
     IN01 = str(input('enter your guess for the first digit: '))
     IN02 = str(input('enter your guess for the second digit: '))
     IN03 = str(input('enter your guess for the third digit: '))
-    #belongs to list variables
+    #belongs-to-list variables
     '''
     those are variables that are assigned as False 
     as long as an input doesn't belong to the list of 
-    right digits
+    right digits and a fourth variable that increments
+    once a guess is found in the the kist
     '''
     blngs01 = False 
     blngs02 = False
     blngs03 = False
+    blngsAllThree = 0
     # loop variables
     trials = 0
     trialsLmt = 10
     picoCount = 0
     # as long as trials arent used up and digits not guessed loop on the code
     while trials != trialsCount and picoCount != 3:
-        # assign True to 
+        '''
+        assign True to belongs-to-variables if an
+        input belongs to the list regardless of position
+        '''
         if IN01 in lstDgts:
             blngs01 = True
+            blngsAllThree +=1
         elif IN02 in lstDgts:
             blngs02 = True
+            blngsAllThree +=1
         elif IN03 in lstDgts:
             blngs02 = True
-        else:
-            None
-        
-    if picoCount = 3:
+            blngsAllThree +=1
+        elif blngs01 == False and blngs02 == False and blngs03 == False:  # if none of the inputs belong to the list print bagels
+            print( 'bagels!' )
+        elif blngsAllThree == 3 and IN01 == dgt01 and IN02 == dgt02 and IN03 == dgt03:
+            picoCount = 3
+            print('pico, pico, pico!!!')
+            print('u win')
+        elif blngs01 == True and IN01 == dgt01:
+            print('pico!')
+            picoCount += 1
+        elif blngs01 == True and IN01 != dgt01:
+            print('fermi!')
+        elif blngs02 == True and IN02 == dgt02:
+            print('pico!')
+            picoCount += 1
+        elif blngs01 == True and IN02 != dgt02:
+            print('fermi!')
+        elif blngs01 == True and IN03 == dgt03:
+            print('pico!')
+            picoCount += 1
+        elif blngs01 == True and IN03 != dgt03:
+            print('fermi!')
+        trialsCount += 1
+    if picoCount == 3:
         print('You win!!')
-    elif trials = 10:
+    elif trials == 10:
         print('Out of trials rerun to play again')
     else:
         print('We encountered an error please contact the adminstrator +201146824479')
