@@ -24,7 +24,7 @@ def bagels_game():
     trialsLmt = 10
     picoCount = 0
     # as long as trials arent used up and digits not guessed loop on the code
-    while trials != trialsLmt and picoCount != 3:
+    while trials < trialsLmt and picoCount != 3:
         # digits inputed as str
         gues01 = str(input('enter your guess for the first digit: '))
         gues02 = str(input('enter your guess for the second digit: '))
