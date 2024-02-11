@@ -48,16 +48,22 @@ def bagels_game():
             picoCount = 3
             print('pico, pico, pico!!!')
             print('u win')
+        elif Gues01Inlst == False:
+            print('bagels!')
         elif Gues01InLst == True and gues01 == dgt01:
             print('pico!')
             picoCount += 1
         elif Gues01InLst == True and gues01 != dgt01:
             print('fermi!')
+        elif Gues02Inlst == False:
+            print('bagels!')
         elif Gues02InLst == True and gues02 == dgt02:
             print('pico!')
             picoCount += 1
         elif Gues02InLst == True and gues02 != dgt02:
             print('fermi!')
+        elif Gues03Inlst == False:
+            print('bagels!')
         elif Gues03InLst == True and gues03 == dgt03:
             print('pico!')
             picoCount += 1
