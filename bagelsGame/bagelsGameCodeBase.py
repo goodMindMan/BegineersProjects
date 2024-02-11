@@ -16,8 +16,8 @@ def bagels_game():
     once a guess is found in the the kist
     '''
     Gues01InLst = False 
-    Gues02InList = False
-    Gues03InList = False
+    Gues02InLst = False
+    Gues03InLst = False
     AllGuessesInLst = 0
     # loop variables
     trials = 0
@@ -53,15 +53,15 @@ def bagels_game():
             picoCount += 1
         elif Gues01InLst == True and gues01 != dgt01:
             print('fermi!')
-        elif Gues02InList == True and gues02 == dgt02:
+        elif Gues02InLst == True and gues02 == dgt02:
             print('pico!')
             picoCount += 1
-        elif Gues02InList == True and gues02 != dgt02:
+        elif Gues02InLst == True and gues02 != dgt02:
             print('fermi!')
-        elif Gues03InList == True and gues03 == dgt03:
+        elif Gues03InLst == True and gues03 == dgt03:
             print('pico!')
             picoCount += 1
-        elif Gues03InList == True and gues03 != dgt03:
+        elif Gues03InLst == True and gues03 != dgt03:
             print('fermi!')
         trials += 1
     if picoCount == 3:
