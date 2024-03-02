@@ -1,12 +1,12 @@
 # Creating sole propietorships 
-class SolePropietorship:
+class Company:
     def __init__(
             self, cash, account_receivables, inventory, current_assets #Current assets
             , noncurrent_assets , accu_depr, accu_depl #Other Assets
             , intangible_assets, longterm_investments #other assets
             , current_lia, noncurrent_lia # Liabilites
-            , owners_equity, net_income , __edit__ # Equity Accounts 
-            , total_rev, sales_rev , total_exp, operating_exp, interest_exp # Income statement Accounts
+            , owners_equity, net_income , ebit  # Equity Accounts 
+            , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement # Income statement Accounts
             ):
         
         # Assigning values to attributes
@@ -29,7 +29,7 @@ class SolePropietorship:
         # Equity
         self.owners_equity = owners_equity
         self.net_income = net_income 
-        self.__edit__ = __edit__       
+        self.ebit = ebit        
         
         # Income Statements 
         self.total_rev = total_rev
@@ -47,76 +47,131 @@ class SolePropietorship:
         return self.current_lia + self.noncurrent_lia
     
 #Hotel
-class Hotel(SolePropietorship):
+class Hotel(Company):
     def __init__(
         self, room_num_aval, room_rev, room_num_occ, room_num_sold
         , cash, account_receivables, inventory, current_assets #Current assets
         , noncurrent_assets , accu_depr, accu_depl #Other Assets
         , intangible_assets, longterm_investments #other assets
         , current_lia, noncurrent_lia # Liabilites
-        , owners_equity, net_income , __edit__# Equity Accounts 
-        , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         ):
+        
+       # initialize attributes from the base class within the subclasses super().__init__(
         super().__init__(
-            cash, account_receivables, inventory, current_assets #Current assets
-            , noncurrent_assets , accu_depr, accu_depl #Other Assets
-            , intangible_assets, longterm_investments #other assets
-            , current_lia, noncurrent_lia # Liabilites
-            , owners_equity, net_income , __edit__# Equity Accounts 
-            , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        cash, account_receivables, inventory, current_assets #Current assets
+        , noncurrent_assets , accu_depr, accu_depl #Other Assets
+        , intangible_assets, longterm_investments #other assets
+        , current_lia, noncurrent_lia # Liabilites
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         )
+        
         self.room_num_aval = room_num_aval
         self.room_nun_occ = room_num_occ
         self.room_rev = room_rev
         self.room_num_sold = room_num_sold
         
 #trade
-class TradeSoleProp(SolePropietorship):
+class TradeSoleProp(Company):
     def __init__(
         self, cogs
         , cash, account_receivables, inventory, current_assets #Current assets
         , noncurrent_assets , accu_depr, accu_depl #Other Assets
         , intangible_assets, longterm_investments #other assets
         , current_lia, noncurrent_lia # Liabilites
-        , owners_equity, net_income , __edit__# Equity Accounts 
-        , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         ):
+        
+       # initialize attributes from the base class within the subclasses super().__init__(
         super().__init__(
         cash, account_receivables, inventory, current_assets #Current assets
         , noncurrent_assets , accu_depr, accu_depl #Other Assets
         , intangible_assets, longterm_investments #other assets
         , current_lia, noncurrent_lia # Liabilites
-        , owners_equity, net_income , __edit__# Equity Accounts 
-        , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         )
+        
         self.cogs = cogs
 
 #Agriculture
-class Agriculture(SolePropietorship):
+class Agriculture(Company):
     def __init__(
         self, total_farm_area, total_farm_rev, total_num_stock, total_stock_rev
         , cash, account_receivables, inventory, current_assets #Current assets
         , noncurrent_assets , accu_depr, accu_depl #Other Assets
         , intangible_assets, longterm_investments #other assets
         , current_lia, noncurrent_lia # Liabilites
-        , owners_equity, net_income , __edit__ # Equity Accounts 
-        , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        , owners_equity, net_income , ebit  # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         ):
+        
+       # initialize attributes from the base class within the subclasses super().__init__(
         super().__init__(
         cash, account_receivables, inventory, current_assets #Current assets
         , noncurrent_assets , accu_depr, accu_depl #Other Assets
         , intangible_assets, longterm_investments #other assets
         , current_lia, noncurrent_lia # Liabilites
-        , owners_equity, net_income , __edit__# Equity Accounts 
-        , total_rev, sales_rev , total_exp, operating_exp, interest_exp
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
         )
+        
         self.total_farm_area = total_farm_area
         self.total_farm_rev = total_farm_rev
         self.total_num_stock = total_num_stock
         self.total_stock_rev = total_stock_rev
         
         
-#consulting
-class Consulting(SolePropietorship):
-    def __init__(self):
-        pass
+# Service businesses
+class ServiceSector(Company):
+    def __init__(
+        self, client_num, total_fee_rev, equity_partner_num
+        , cash, account_receivables, inventory, current_assets #Current assets
+        , noncurrent_assets , accu_depr, accu_depl #Other Assets
+        , intangible_assets, longterm_investments #other assets
+        , current_lia, noncurrent_lia # Liabilites
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
+        ):
+        
+       # initialize attributes from the base class within the subclasses super().__init__(
+        super().__init__(
+        cash, account_receivables, inventory, current_assets #Current assets
+        , noncurrent_assets , accu_depr, accu_depl #Other Assets
+        , intangible_assets, longterm_investments #other assets
+        , current_lia, noncurrent_lia # Liabilites
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
+        )
+        
+        self.client_num = client_num
+        self.total_fee_rev = total_fee_rev
+        self.equity_partner_num = equity_partner_num
+
+# Manufacturing companies
+class Manuf(Company):
+    def __init__(
+        self, materials_cost, overhead_cost, var_cost
+        , cash, account_receivables, inventory, current_assets #Current assets
+        , noncurrent_assets , accu_depr, accu_depl #Other Assets
+        , intangible_assets, longterm_investments #other assets
+        , current_lia, noncurrent_lia # Liabilites
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
+        ):
+        # initialize attributes from the base class within the subclasses
+        super().__init__(
+        cash, account_receivables, inventory, current_assets #Current assets
+        , noncurrent_assets , accu_depr, accu_depl #Other Assets
+        , intangible_assets, longterm_investments #other assets
+        , current_lia, noncurrent_lia # Liabilites
+        , owners_equity, net_income , ebit # Equity Accounts 
+        , total_rev, sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
+        , sales_rev , total_exp, operating_exp, interest_exp  # Income Statement
+        )
+        self.materials_cost = materials_cost
+        self.overhaed_cost = overhead_cost
+        self.var_cost = var_cost
