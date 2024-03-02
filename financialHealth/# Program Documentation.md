@@ -8,6 +8,10 @@ cash, account_receivables, inventory, current_assets #Current assets
 , owners_equity, net_income , ebit  # Equity Accounts 
 , total_rev, sales_rev , total_exp, operating_exp, interest_exp
 ```
-attributes
+attributes from 
+```
+company
+```
+classs
 
 
