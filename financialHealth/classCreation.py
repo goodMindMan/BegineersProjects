@@ -1,4 +1,4 @@
-# Creating main class
+# Creating sole propietorships 
 class Company:
     def __init__(
             self, cash, account_receivables, inventory, current_assets 
@@ -36,7 +36,7 @@ class Company:
         self.sales_rev = sales_rev
         self.total_exp = total_exp
         self.operating_exp = operating_exp
-        self.interest_exp,  = interest_exp
+        self.interest_exp = interest_exp
         self.depr_exp = depr_exp
         self.wages_exp = wages_exp
     
@@ -125,7 +125,13 @@ class Hotel(Company):
         , total_rev, sales_rev , total_exp, operating_exp, interest_exp, depr_exp, wages_exp  
         ):
         
-       # initialize attributes from the base class within the subclasses
+        # Intializing subclass attributes
+        self.room_num_aval = room_num_aval
+        self.room_num_occ = room_num_occ
+        self.room_rev = room_rev
+        self.room_num_sold = room_num_sold
+
+        # initialize attributes from the base class within the subclasses
         super().__init__(
         cash, account_receivables, inventory, current_assets 
         , noncurrent_assets , accu_depr 
@@ -135,12 +141,6 @@ class Hotel(Company):
         , total_rev, sales_rev , total_exp, operating_exp, interest_exp, depr_exp, wages_exp  
         )
         
-        # Intializing subclass attributes
-        self.room_num_aval = room_num_aval
-        self.room_num_occ = room_num_occ
-        self.room_rev = room_rev
-        self.room_num_sold = room_num_sold
-    
     # Other metrics methods
     # gross operation profit calculation 
     def GOP(self):
@@ -170,7 +170,7 @@ class Hotel(Company):
 
         
 #trade
-class TradeSoleProp(Company):
+class Trade(Company):
     def __init__(
         self, cogs
         , cash, account_receivables, inventory, current_assets 
